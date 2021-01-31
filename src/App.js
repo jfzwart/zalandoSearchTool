@@ -21,14 +21,14 @@ const Search = () => {
       setResults(data.query.search); //already prefilter available data
     };
 
-    if (term && !results.length) {
+    if (term && results.length > 0) {
       search();
     } else {
         const timeoutId = setTimeout(() => {
           if(term) {
           search();
           }
-        }, 300);
+        }, 600);
 
         return () => {
           clearTimeout(timeoutId);
